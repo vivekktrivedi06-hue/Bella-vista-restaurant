@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<!--
+  Bella Vista Restaurant — Home Page
+  Author: Bella Vista (Portfolio project)
+  Description: Premium luxury restaurant landing page — pure HTML/CSS/JS.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bella Vista — Timeless Italian Dining</title>
+  <meta name="description" content="Bella Vista Restaurant — where every plate is a masterpiece. Refined Italian cuisine, curated wines and a warm candle-lit atmosphere." />
+
+  <!-- Fonts: Fraunces (editorial serif) + Manrope (body) + Italianno (script accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,700&family=Italianno&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-testid="home-page">
+
+  <!-- ================= LOADING SCREEN ================= -->
+  <div class="loader" id="loader" data-testid="page-loader">
+    <div class="loader-inner">
+      <span class="loader-mark">BV</span>
+      <span class="loader-bar"></span>
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar" id="navbar" data-testid="main-navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand" data-testid="brand-logo">
+        <span class="brand-mark">B<em>·</em>V</span>
+        <span class="brand-name">Bella&nbsp;Vista</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="active" data-testid="nav-home">Home</a>
+        <a href="menu.html" data-testid="nav-menu">Menu</a>
+        <a href="contact.html" data-testid="nav-contact">Contact</a>
+        <a href="#reserve" class="nav-cta" data-testid="nav-reserve">Reserve</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" data-testid="nav-toggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" data-testid="hero-section">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+
+    <div class="hero-content reveal">
+      <span class="eyebrow"><i class="fa-solid fa-star"></i> Est. 1987 · Since three generations</span>
+      <h1 class="hero-title">
+        Where every plate<br />
+        <span class="script">is a <em>masterpiece</em>.</span>
+      </h1>
+      <p class="hero-sub">
+        Rustic Italian soul meets modern fine dining. Hand-rolled pasta,
+        wood-fired classics and a candle-lit terrace overlooking the old harbour.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#reserve" class="btn btn-gold" data-testid="hero-reserve-btn">
+          <i class="fa-regular fa-calendar"></i> Reserve a Table
+        </a>
+        <a href="menu.html" class="btn btn-ghost" data-testid="hero-menu-btn">
+          Explore the Menu <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <div><span class="num">37</span><span class="lbl">Years of craft</span></div>
+        <span class="sep"></span>
+        <div><span class="num">4.9</span><span class="lbl">Guest rating</span></div>
+        <span class="sep"></span>
+        <div><span class="num">1★</span><span class="lbl">Michelin recommended</span></div>
+      </div>
+    </div>
+
+    <a href="#featured" class="hero-scroll" aria-label="Scroll">
+      <span></span> scroll
+    </a>
+  </section>
+
+  <!-- ================= FEATURED DISHES ================= -->
+  <section id="featured" class="section featured">
+    <div class="section-head reveal">
+      <span class="tag">Signature Plates</span>
+      <h2>The chef's <em>little obsessions</em></h2>
+      <p>Six dishes we've perfected over the years — each one a story on a plate.</p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="dish-card reveal" data-testid="dish-card-1">
+        <div class="dish-img" style="background-image:url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=900&q=80');"></div>
+        <div class="dish-body">
+          <div class="dish-row">
+            <h3>Truffle Tagliatelle</h3>
+            <span class="price">$32</span>
+          </div>
+          <p>Hand-cut ribbons, brown butter, black winter truffle, aged pecorino.</p>
+        </div>
+      </article>
+
+      <article class="dish-card reveal" data-testid="dish-card-2">
+        <div class="dish-img" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?w=900&q=80');"></div>
+        <div class="dish-body">
+          <div class="dish-row">
+            <h3>Tuscan Ribeye</h3>
+            <span class="price">$48</span>
+          </div>
+          <p>Wood-fire seared, rosemary jus, roasted marrow bone, grilled radicchio.</p>
+        </div>
+      </article>
+
+      <article class="dish-card reveal" data-testid="dish-card-3">
+        <div class="dish-img" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=900&q=80');"></div>
+        <div class="dish-body">
+          <div class="dish-row">
+            <h3>Napoletana Pizza</h3>
+            <span class="price">$22</span>
+          </div>
+          <p>72-hour dough, San Marzano, bufala mozzarella, basil, Ligurian oil.</p>
+        </div>
+      </article>
+
+      <article class="dish-card reveal" data-testid="dish-card-4">
+        <div class="dish-img" style="background-image:url('https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=900&q=80');"></div>
+        <div class="dish-body">
+          <div class="dish-row">
+            <h3>Sea-salt Branzino</h3>
+            <span class="price">$38</span>
+          </div>
+          <p>Whole roasted, lemon confit, capers, warm heirloom-tomato panzanella.</p>
+        </div>
+      </article>
+
+      <article class="dish-card reveal" data-testid="dish-card-5">
+        <div class="dish-img" style="background-image:url('https://images.unsplash.com/photo-1587314168485-3236d6710814?w=900&q=80');"></div>
+        <div class="dish-body">
+          <div class="dish-row">
+            <h3>Burrata &amp; Peach</h3>
+            <span class="price">$18</span>
+          </div>
+          <p>Puglian burrata, grilled stone fruit, mint, cracked pepper, aged balsamic.</p>
+        </div>
+      </article>
+
+      <article class="dish-card reveal" data-testid="dish-card-6">
+        <div class="dish-img" style="background-image:url('https://images.unsplash.com/photo-1551024506-0bccd828d307?w=900&q=80');"></div>
+        <div class="dish-body">
+          <div class="dish-row">
+            <h3>Tiramisù Classico</h3>
+            <span class="price">$14</span>
+          </div>
+          <p>Savoiardi, espresso, mascarpone cream, dark cocoa — the way nonna made it.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="section-cta reveal">
+      <a href="menu.html" class="btn btn-outline" data-testid="see-full-menu-btn">
+        See the full menu <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= CHEF ================= -->
+  <section class="chef" data-testid="chef-section">
+    <div class="chef-grid">
+      <div class="chef-media reveal">
+        <div class="chef-photo" style="background-image:url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=1200&q=80');"></div>
+        <div class="chef-badge">
+          <span class="script">signature</span>
+          <span class="sig">Marco&nbsp;Ferretti</span>
+        </div>
+      </div>
+
+      <div class="chef-copy reveal">
+        <span class="tag">Meet the Chef</span>
+        <h2>Marco Ferretti — <em>a life spent chasing flavour.</em></h2>
+        <p class="lead">
+          Born in Bologna, trained in Modena and Paris, Marco brings three
+          decades of restlessness to the Bella Vista kitchen. His food is
+          quiet, precise and unmistakably Italian.
+        </p>
+        <ul class="chef-list">
+          <li><i class="fa-solid fa-award"></i> Michelin&nbsp;· Bib&nbsp;Gourmand recipient (2019–2024)</li>
+          <li><i class="fa-solid fa-utensils"></i> Trained under Massimo Bottura</li>
+          <li><i class="fa-solid fa-seedling"></i> Champion of farm-to-table cooking</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="about" data-testid="about-section">
+    <div class="about-inner reveal">
+      <span class="tag">Our Story</span>
+      <h2>A table set for <em>generations</em>.</h2>
+      <div class="about-cols">
+        <p>
+          Bella Vista opened its doors in 1987 as a tiny six-table trattoria
+          on the corner of Via del Sole. Almost forty years later, we're still
+          in the same building — the copper pans hang from the same beams,
+          the sourdough starter is still called <em>Gino</em>, and every guest
+          is still welcomed like family.
+        </p>
+        <p>
+          What has changed is the ambition. We source olive oil from a single
+          grove in Puglia, our flour from a stone-mill in Umbria, and our
+          wine list runs more than 240 references — with a fierce love for
+          small, biodynamic producers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="testimonials" data-testid="testimonials-section">
+    <div class="section-head reveal center">
+      <span class="tag">Guest Voices</span>
+      <h2>What our diners say</h2>
+    </div>
+
+    <div class="quote-grid">
+      <blockquote class="quote-card reveal">
+        <i class="fa-solid fa-quote-left"></i>
+        <p>"The tagliatelle. The candlelight. The way the sommelier just knew what we'd love. Perfect from the first minute to the last."</p>
+        <footer>
+          <strong>Amelia&nbsp;R.</strong><span>Food&nbsp;critic, Le&nbsp;Monde</span>
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card reveal">
+        <i class="fa-solid fa-quote-left"></i>
+        <p>"Every dish tastes like Marco's grandmother is quietly correcting him from the corner. That's the highest compliment I can pay."</p>
+        <footer>
+          <strong>Luca&nbsp;D.</strong><span>Travel writer</span>
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card reveal">
+        <i class="fa-solid fa-quote-left"></i>
+        <p>"We came for anniversary dinner and stayed until the espresso machine turned cold. We're already planning next year's booking."</p>
+        <footer>
+          <strong>Priya&nbsp;&amp;&nbsp;Sam</strong><span>Regulars since 2016</span>
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section class="gallery" data-testid="gallery-section">
+    <div class="section-head reveal">
+      <span class="tag">Inside the Room</span>
+      <h2>A little peek behind <em>the curtain</em></h2>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gal-item tall reveal" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80');"></div>
+      <div class="gal-item reveal" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80');"></div>
+      <div class="gal-item reveal" style="background-image:url('https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=900&q=80');"></div>
+      <div class="gal-item wide reveal" style="background-image:url('https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1400&q=80');"></div>
+      <div class="gal-item reveal" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80');"></div>
+    </div>
+  </section>
+
+  <!-- ================= HOURS + LOCATION ================= -->
+  <section class="visit" id="reserve" data-testid="visit-section">
+    <div class="visit-grid">
+      <div class="visit-hours reveal">
+        <span class="tag">Opening Hours</span>
+        <h2>Come as you <em>are</em>.</h2>
+        <ul class="hours-list">
+          <li><span>Monday</span><span class="closed">Closed</span></li>
+          <li><span>Tuesday — Thursday</span><span>6:00&nbsp;pm — 10:30&nbsp;pm</span></li>
+          <li><span>Friday</span><span>6:00&nbsp;pm — 11:30&nbsp;pm</span></li>
+          <li><span>Saturday</span><span>12:30&nbsp;pm — 11:30&nbsp;pm</span></li>
+          <li><span>Sunday</span><span>12:30&nbsp;pm — 9:30&nbsp;pm</span></li>
+        </ul>
+        <a href="contact.html" class="btn btn-gold" data-testid="visit-reserve-btn">
+          <i class="fa-regular fa-calendar-check"></i> Reserve a Table
+        </a>
+      </div>
+
+      <div class="visit-map reveal" data-testid="location-preview">
+        <div class="map-frame">
+          <div class="map-tint" aria-hidden="true"></div>
+          <iframe
+            src="https://www.google.com/maps?q=Piazza+Navona+Rome&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Bella Vista location">
+          </iframe>
+        </div>
+        <div class="map-info">
+          <h4><i class="fa-solid fa-location-dot"></i> Via del Sole, 27</h4>
+          <p>Old Harbour District · 00186 · Roma, Italia</p>
+          <p class="phone"><i class="fa-solid fa-phone"></i> +39&nbsp;06&nbsp;9876&nbsp;5432</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer" data-testid="site-footer">
+    <div class="footer-grid">
+      <div class="foot-col">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">B<em>·</em>V</span>
+          <span class="brand-name">Bella&nbsp;Vista</span>
+        </a>
+        <p>Refined Italian cooking in the heart of the old harbour district — since 1987.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="TripAdvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h5>Visit</h5>
+        <p>Via del Sole, 27<br/>00186 · Roma, Italia</p>
+        <p>+39 06 9876 5432<br/>hello@bellavista.it</p>
+      </div>
+
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#reserve">Reserve</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>Newsletter</h5>
+        <p>Seasonal menus, chef's notes and quiet evenings — straight to your inbox.</p>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.querySelector('button').innerHTML='<i class=\'fa-solid fa-check\'></i>&nbsp;Subscribed';" data-testid="newsletter-form">
+          <input type="email" required placeholder="your@email.com" aria-label="Email" />
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <p>© <span id="year"></span> Bella Vista Ristorante — All rights reserved.</p>
+      <p>Crafted with <i class="fa-solid fa-heart"></i> in Roma.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!--
+  Bella Vista Restaurant — Menu Page
+  Filterable menu grid, category tabs, hover animations.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — Bella Vista</title>
+  <meta name="description" content="Bella Vista's full menu — starters, hand-rolled pasta, wood-fired pizza, mains, burgers, desserts and a curated drinks list." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,700&family=Italianno&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-testid="menu-page">
+
+  <!-- Loader -->
+  <div class="loader" id="loader"><div class="loader-inner"><span class="loader-mark">BV</span><span class="loader-bar"></span></div></div>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">B<em>·</em>V</span>
+        <span class="brand-name">Bella&nbsp;Vista</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" data-testid="nav-home">Home</a>
+        <a href="menu.html" class="active" data-testid="nav-menu">Menu</a>
+        <a href="contact.html" data-testid="nav-contact">Contact</a>
+        <a href="contact.html#reserve" class="nav-cta" data-testid="nav-reserve">Reserve</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Page header -->
+  <section class="page-hero" data-testid="menu-hero">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1800&q=80');"></div>
+    <div class="page-hero-scrim"></div>
+    <div class="page-hero-content reveal">
+      <span class="eyebrow"><i class="fa-solid fa-utensils"></i> The Menu</span>
+      <h1>Small plates,<br/><span class="script">big <em>stories</em>.</span></h1>
+      <p>Everything here is made from scratch, in-house, every day. Ingredients change with the seasons — so does the menu.</p>
+    </div>
+  </section>
+
+  <!-- Category filter tabs -->
+  <section class="filters" data-testid="menu-filters">
+    <div class="filter-inner">
+      <button class="filter-btn active" data-filter="all" data-testid="filter-all">All</button>
+      <button class="filter-btn" data-filter="starters" data-testid="filter-starters">Starters</button>
+      <button class="filter-btn" data-filter="main" data-testid="filter-main">Main Course</button>
+      <button class="filter-btn" data-filter="pizza" data-testid="filter-pizza">Pizza</button>
+      <button class="filter-btn" data-filter="pasta" data-testid="filter-pasta">Pasta</button>
+      <button class="filter-btn" data-filter="burgers" data-testid="filter-burgers">Burgers</button>
+      <button class="filter-btn" data-filter="desserts" data-testid="filter-desserts">Desserts</button>
+      <button class="filter-btn" data-filter="drinks" data-testid="filter-drinks">Drinks</button>
+    </div>
+  </section>
+
+  <!-- Menu grid -->
+  <section class="menu-section">
+    <div class="menu-grid" id="menuGrid" data-testid="menu-grid">
+      <!-- STARTERS -->
+      <article class="menu-card reveal" data-cat="starters" data-testid="menu-card">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1587314168485-3236d6710814?w=900&q=80');"><span class="mc-badge">Chef's pick</span></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Burrata &amp; Peach</h3><span class="dots"></span><span class="price">$18</span></div>
+          <p>Puglian burrata, grilled stone fruit, mint, aged balsamic.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="starters">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1541014741259-de529411b96a?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Beef Carpaccio</h3><span class="dots"></span><span class="price">$21</span></div>
+          <p>Wagyu shavings, capers, rocket, shaved parmigiano, lemon oil.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="starters">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Tuna Tartare</h3><span class="dots"></span><span class="price">$24</span></div>
+          <p>Yellowfin, avocado, yuzu, sesame, crispy sourdough.</p>
+        </div>
+      </article>
+
+      <!-- MAIN COURSE -->
+      <article class="menu-card reveal" data-cat="main">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?w=900&q=80');"><span class="mc-badge">Signature</span></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Tuscan Ribeye</h3><span class="dots"></span><span class="price">$48</span></div>
+          <p>Wood-fire seared, rosemary jus, marrow bone, grilled radicchio.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="main">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Sea-salt Branzino</h3><span class="dots"></span><span class="price">$38</span></div>
+          <p>Whole roasted, lemon confit, capers, panzanella.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="main">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1432139509613-5c4255815697?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Lamb Osso Buco</h3><span class="dots"></span><span class="price">$36</span></div>
+          <p>Slow-braised, saffron risotto, gremolata.</p>
+        </div>
+      </article>
+
+      <!-- PIZZA -->
+      <article class="menu-card reveal" data-cat="pizza">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Napoletana</h3><span class="dots"></span><span class="price">$22</span></div>
+          <p>72-hour dough, San Marzano, bufala, basil, Ligurian oil.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="pizza">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Tartufo Bianco</h3><span class="dots"></span><span class="price">$28</span></div>
+          <p>White base, fior-di-latte, wild mushrooms, truffle shavings.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="pizza">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Diavola</h3><span class="dots"></span><span class="price">$24</span></div>
+          <p>Spicy 'nduja, salame piccante, honey, chilli flakes.</p>
+        </div>
+      </article>
+
+      <!-- PASTA -->
+      <article class="menu-card reveal" data-cat="pasta">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=900&q=80');"><span class="mc-badge">Chef's pick</span></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Truffle Tagliatelle</h3><span class="dots"></span><span class="price">$32</span></div>
+          <p>Hand-cut ribbons, brown butter, black winter truffle, pecorino.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="pasta">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Cacio e Pepe</h3><span class="dots"></span><span class="price">$22</span></div>
+          <p>Tonnarelli, aged pecorino romano, Tellicherry pepper.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="pasta">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1587740908075-9e245311a13f?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Lobster Ravioli</h3><span class="dots"></span><span class="price">$34</span></div>
+          <p>Maine lobster, saffron cream, chive oil.</p>
+        </div>
+      </article>
+
+      <!-- BURGERS -->
+      <article class="menu-card reveal" data-cat="burgers">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Toscana Burger</h3><span class="dots"></span><span class="price">$19</span></div>
+          <p>Chianina beef, taleggio, caramelised onion, wild rocket.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="burgers">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1550547660-d9450f859349?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Truffle Wagyu</h3><span class="dots"></span><span class="price">$26</span></div>
+          <p>Wagyu blend, black-truffle aioli, brie, brioche bun.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="burgers">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Portobello Verde</h3><span class="dots"></span><span class="price">$17</span></div>
+          <p>Grilled portobello, smoked mozzarella, basil pesto (v).</p>
+        </div>
+      </article>
+
+      <!-- DESSERTS -->
+      <article class="menu-card reveal" data-cat="desserts">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1551024506-0bccd828d307?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Tiramisù Classico</h3><span class="dots"></span><span class="price">$14</span></div>
+          <p>Savoiardi, espresso, mascarpone, dark cocoa.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="desserts">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1488477181946-6428a0291777?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Panna Cotta</h3><span class="dots"></span><span class="price">$12</span></div>
+          <p>Vanilla bean, roasted figs, thyme honey.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="desserts">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1464195244916-405fa0a82545?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Cannoli Siciliani</h3><span class="dots"></span><span class="price">$11</span></div>
+          <p>Crisp shell, ricotta cream, candied orange, pistachio.</p>
+        </div>
+      </article>
+
+      <!-- DRINKS -->
+      <article class="menu-card reveal" data-cat="drinks">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Negroni della Casa</h3><span class="dots"></span><span class="price">$16</span></div>
+          <p>House gin, Campari, aged vermouth, blood-orange twist.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="drinks">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Barolo, 2018</h3><span class="dots"></span><span class="price">$22 gl</span></div>
+          <p>Piemonte · nebbiolo · rose petal, tar, dried cherry.</p>
+        </div>
+      </article>
+      <article class="menu-card reveal" data-cat="drinks">
+        <div class="mc-img" style="background-image:url('https://images.unsplash.com/photo-1544145945-f90425340c7e?w=900&q=80');"></div>
+        <div class="mc-body">
+          <div class="mc-row"><h3>Espresso Martini</h3><span class="dots"></span><span class="price">$15</span></div>
+          <p>Double shot, vodka, coffee liqueur, single-origin cocoa.</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="empty-state" id="emptyState" hidden data-testid="menu-empty-state">
+      <i class="fa-regular fa-face-frown"></i> Nothing on the menu for this category yet — check back with the season.
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band" data-testid="menu-cta">
+    <div class="reveal">
+      <h2>Hungry already? <em>Save your table.</em></h2>
+      <a href="contact.html" class="btn btn-gold" data-testid="menu-reserve-btn"><i class="fa-regular fa-calendar-check"></i> Reserve now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="foot-col">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">B<em>·</em>V</span>
+          <span class="brand-name">Bella&nbsp;Vista</span>
+        </a>
+        <p>Refined Italian cooking in the heart of the old harbour district — since 1987.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="TripAdvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Visit</h5>
+        <p>Via del Sole, 27<br/>00186 · Roma, Italia</p>
+        <p>+39 06 9876 5432<br/>hello@bellavista.it</p>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Newsletter</h5>
+        <p>Seasonal menus, chef's notes — straight to your inbox.</p>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.querySelector('button').innerHTML='<i class=\'fa-solid fa-check\'></i>&nbsp;Subscribed';">
+          <input type="email" required placeholder="your@email.com" aria-label="Email" />
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span id="year"></span> Bella Vista Ristorante — All rights reserved.</p>
+      <p>Crafted with <i class="fa-solid fa-heart"></i> in Roma.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
